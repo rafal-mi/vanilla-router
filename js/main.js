@@ -27,6 +27,9 @@ window.onpopstate = function(event) {
 
 globalThis.router = router;
 
+setTimeout(() => router.navigate('/home'), 100);
+
+
 
   
 

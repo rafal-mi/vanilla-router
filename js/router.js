@@ -37,7 +37,7 @@ class Router {
       .replace(/\/$/, '')
       .replace(/^\//, '');
 
-  getFragment = () => {
+  getPath = () => {
     let fragment = '';
     if (this.mode === 'history') {
       fragment = this.clearSlashes(decodeURI(window.location.pathname + window.location.search));
@@ -60,8 +60,8 @@ class Router {
   };
 
   follow = async () => {
-    if (this.current === this.getFragment()) return;
-    this.current = this.getFragment();
+    if (this.current === this.getPath()) return;
+    this.current = this.getPath();
 
     let theRoute = null;
     this.routes.some(route => {
